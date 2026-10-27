@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f0ff">
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div class="brand">
+                <span class="brand-icon">✦</span>
+                <div>
+                    <h1>Focus Timer</h1>
+                    <p>Better focus. A calmer mind.</p>
+                </div>
+            </div>
+
+            <div class="tabs" role="group" aria-label="Timer mode">
+                <button class="tab active" id="focusTab" type="button">
+                    Focus
+                </button>
+                <button class="tab" id="breakTab" type="button">
+                    Break
+                </button>
+            </div>
+        </header>
+
+        <section class="timer-section">
+            <p class="eyebrow" id="timerLabel">FOCUS TIME</p>
+
+            <div class="clock" id="clock">
+                <svg class="clock-svg" viewBox="0 0 280 280"
+                     aria-hidden="true">
+                    <defs>
+                        <linearGradient id="ringGradient"
+                            x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#b4a2ff"/>
+                            <stop offset="100%" stop-color="#7558e5"/>
+                        </linearGradient>
+                    </defs>
+
+                    <circle class="ring-track"
+                        cx="140" cy="140" r="128"/>
+
+                    <circle class="ring-progress" id="progressRing"
+                        cx="140" cy="140" r="128"/>
+                </svg>
+
+                <div class="clock-center">
+                    <span class="clock-caption" id="clockCaption">
+                        TIME TO FOCUS
+                    </span>
+
+                    <div class="timer-display" id="timerDisplay">
+                        25:00
+                    </div>
+
+                    <p class="clock-subtitle" id="clockSubtitle">
+                        Make this moment count.
+                    </p>
+                </div>
+            </div>
+
+            <div class="picker-heading">
+                <span>SET YOUR DURATION</span>
+                <span class="picker-hint">Scroll to adjust</span>
+            </div>
+
+            <div class="picker">
+                <div class="picker-column">
+                    <div class="wheel" id="hoursWheel"
+                         aria-label="Hours" tabindex="0"></div>
+                    <span class="unit">hrs</span>
+                </div>
+
+                <span class="colon">:</span>
+
+                <div class="picker-column">
+                    <div class="wheel" id="minutesWheel"
+                         aria-label="Minutes" tabindex="0"></div>
+                    <span class="unit">min</span>
+                </div>
+
+                <span class="colon">:</span>
+
+                <div class="picker-column">
+                    <div class="wheel" id="secondsWheel"
+                         aria-label="Seconds" tabindex="0"></div>
+                    <span class="unit">sec</span>
+                </div>
+
+                <div class="picker-selection"></div>
+            </div>
+
+            <div class="controls">
+                <button class="start-button" id="startBtn" type="button">
+                    <span id="startIcon">▶</span>
+                    <span id="startText">Start focus</span>
+                </button>
+
+                <button class="reset-button" id="resetBtn"
+                        type="button" aria-label="Reset timer"
+                        title="Reset timer">
+                    ↻
+                </button>
+            </div>
+
+            <p class="message" id="message" aria-live="polite"></p>
+        </section>
+
+        <footer class="footer">
+            <div class="session-icon">✓</div>
+
+            <div class="session-info">
+                <span>Completed focus sessions</span>
+                <strong id="completedCount">0</strong>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <p class="quote">
+                Small steps<br>
+                create big results.
+                <span>♡</span>
+            </p>
+        </footer>
+
+        <p class="bottom-note">SLOW DOWN · BREATHE · BEGIN</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
